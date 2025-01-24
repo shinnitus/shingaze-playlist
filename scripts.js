@@ -91,3 +91,17 @@ playlist.forEach((track, index) => {
 menuButton.addEventListener("click", () => {
     dropdownContainer.classList.toggle("open");
 });
+const dropdown = document.getElementById("tracklist");
+
+// Populate the dropdown menu with tracks
+playlist.forEach((track, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = track.title;
+    listItem.classList.add("track-item");
+    listItem.addEventListener("click", () => {
+        loadTrack(index); // Load the selected track when clicked
+        audio.play(); // Start playing immediately
+        toggleDropdown(false); // Close the dropdown menu
+    });
+    dropdown.appendChild(listItem);
+});
