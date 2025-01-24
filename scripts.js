@@ -108,6 +108,9 @@ playlist.forEach((track, index) => {
 const dropdown = document.getElementById("tracklist");
 
 playlist.forEach((track, index) => {
+    playlist.forEach((track) => {
+    console.log(track.title); // This should log all 12 tracks
+});
     const trackItem = document.createElement("li");
     trackItem.textContent = `${track.title} - ${track.artist}`;
     trackItem.classList.add("dropdown-item");
