@@ -132,3 +132,22 @@ input[type="range"] {
 .hidden {
     display: none;
 }
+
+.dropdown {
+    max-height: 300px; /* Adjust to fit all tracks or allow scrolling */
+    overflow-y: auto; /* Enables a scrollbar if the content exceeds the height */
+    background-color: #fff; /* Ensure the background matches your design */
+    border: 1px solid #ddd; /* Optional: adds a border for clarity */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: adds a dropdown shadow */
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
