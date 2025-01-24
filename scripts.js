@@ -70,3 +70,24 @@ playPauseButton.addEventListener("click", togglePlayPause);
 
 // Load the first track initially
 loadTrack(currentTrackIndex);
+const dropdownContainer = document.getElementById("dropdownContainer");
+const tracklistElement = document.getElementById("tracklist");
+const menuButton = document.getElementById("menuButton");
+
+// Load playlist into dropdown
+playlist.forEach((track, index) => {
+    const li = document.createElement("li");
+    li.textContent = track.title;
+    li.dataset.index = index;
+    li.addEventListener("click", () => {
+        currentTrackIndex = index;
+        loadTrack(currentTrackIndex);
+        audio.play();
+    });
+    tracklistElement.appendChild(li);
+});
+
+// Toggle dropdown
+menuButton.addEventListener("click", () => {
+    dropdownContainer.classList.toggle("open");
+});
