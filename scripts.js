@@ -105,3 +105,16 @@ playlist.forEach((track, index) => {
     });
     dropdown.appendChild(listItem);
 });
+const dropdown = document.getElementById("tracklist");
+
+playlist.forEach((track, index) => {
+    const trackItem = document.createElement("li");
+    trackItem.textContent = `${track.title} - ${track.artist}`;
+    trackItem.classList.add("dropdown-item");
+    trackItem.addEventListener("click", () => {
+        loadTrack(index); // Plays the selected track
+        toggleDropdown(); // Closes the dropdown menu
+    });
+    dropdown.appendChild(trackItem);
+});
+
