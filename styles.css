@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #fdfd96; /* Pastel yellow */
+    background-color: #fcdd79; /* Pastel yellow */
     margin: 0;
     padding: 20px;
     display: flex;
@@ -23,7 +23,7 @@ body {
 }
 
 .player-container {
-    background-color: #72dbf2; /* Pastel blue */
+    background-color: #82dbff; /* Pastel blue */
     border-radius: 15px;
     padding: 20px;
     width: 300px;
@@ -50,7 +50,7 @@ body {
 }
 
 button {
-    background-color: #fdfd96; /* Yellow */
+    background-color: #fcdd79; /* Yellow */
     border: none;
     border-radius: 5px;
     padding: 10px;
