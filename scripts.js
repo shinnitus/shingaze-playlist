@@ -1,16 +1,16 @@
 const playlist = [
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/After school, on the way to school..mp3", title: "After School, On the Way to School", artist: "Unknown" },
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/Capable of love.mp3", title: "Capable of Love", artist: "Unknown" },
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/After school, on the way to school..mp3", title: "After School, On the Way to School", artist: "kinoue64" },
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/Capable of love.mp3", title: "Capable of Love", artist: "Pinkpantheress" },
     { src: "/Users/obisballs707/Downloads/:audioplayer/assets/conception for three forms of unhappiness at the state of existence.mp3", title: "Conception for Three Forms of Unhappiness", artist: "Unknown" },
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/Ginkgo.mp3", title: "Ginkgo", artist: "Unknown" },
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/hades in the dead of winter.mp3", title: "Hades in the Dead of Winter", artist: "Unknown" },
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/Humming Word.mp3", title: "Humming Word", artist: "Unknown" },
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/nigastu no heitai.mp3", title: "Nigatsu no Heitai", artist: "Unknown" },
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/shayou.mp3", title: "Shayou", artist: "Unknown" },
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/When You Sleep.mp3", title: "When You Sleep", artist: "Unknown" },
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/Where Blue Light Blooms.mp3", title: "Where Blue Light Blooms", artist: "Unknown" },
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/サマースクール.mp3", title: "サマースクール", artist: "Unknown" },
-    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/ダブル・プラトニツク・スウイサイド.mp3", title: "ダブル・プラトニツク・スウイサイド", artist: "Unknown" }
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/Ginkgo.mp3", title: "Ginkgo", artist: "my dead girlfriend" },
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/hades in the dead of winter.mp3", title: "Hades in the Dead of Winter", artist: "my dead girlfriend" },
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/Humming Word.mp3", title: "Humming Word", artist: "Pitcher56" },
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/nigastu no heitai.mp3", title: "Nigatsu no Heitai", artist: "the cabs" },
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/shayou.mp3", title: "Shayou", artist: "chouchou merged syrup" },
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/When You Sleep.mp3", title: "When You Sleep", artist: "pastel ghost" },
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/Where Blue Light Blooms.mp3", title: "Where Blue Light Blooms", artist: "origami angel" },
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/サマースクール.mp3", title: "サマースクール", artist: "SEAPOOL" },
+    { src: "/Users/obisballs707/Downloads/:audioplayer/assets/ダブル・プラトニツク・スウイサイド.mp3", title: "ダブル・プラトニツク・スウイサイド", artist: "tokenainamae" }
 ];
 
 let currentTrackIndex = 0;
