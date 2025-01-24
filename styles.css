@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfd96; /* Pastel yellow */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+.album-cover-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.album-cover {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.player-container {
+    background-color: #72dbf2; /* Pastel blue */
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.player-display {
+    margin-bottom: 15px;
+}
+
+.track-title, .track-artist {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #fdfd96; /* Yellow */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f9e87c; /* Slightly darker yellow */
+}
+
+input[type="range"] {
+    width: 80px;
+    margin-left: 10px;
+}
