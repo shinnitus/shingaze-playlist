@@ -73,7 +73,7 @@ input[type="range"] {
     max-width: 300px;
     overflow: hidden;
     max-height: 0;
-    background-color: #72dbf2;
+    background-color: #82dbff;
     border-radius: 10px;
     margin-top: 10px;
     transition: max-height 0.3s ease;
