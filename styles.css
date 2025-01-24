@@ -71,7 +71,7 @@ input[type="range"] {
     position: relative;
     width: 100%;
     max-width: 300px;
-    overflow: hidden;
+    overflow-y: auto; 
     max-height: 0;
     background-color: #82dbff;
     border-radius: 10px;
