@@ -55,6 +55,9 @@ function playPrevious() {
     playPauseButton.textContent = "⏸"; // Update button to pause
 }
 
+// Event listener for when the audio ends
+audio.addEventListener("ended", playNext);
+
 // Volume slider listener
 volumeSlider.addEventListener("input", () => {
     audio.volume = volumeSlider.value;
