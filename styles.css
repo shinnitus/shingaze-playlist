@@ -8,6 +8,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
+    overflow: hidden; /* Prevent unintended scrolling */
 }
 
 .album-cover-container {
@@ -56,6 +57,7 @@ button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 button:hover {
@@ -66,21 +68,28 @@ input[type="range"] {
     width: 80px;
     margin-left: 10px;
 }
+
 /* Dropdown container */
 .dropdown-container {
     position: relative;
     width: 100%;
     max-width: 300px;
-    overflow-y: auto; 
-    max-height: 0;
-    background-color: #82dbff;
+    background-color: #82dbff; /* Matches the player background */
     border-radius: 10px;
     margin-top: 10px;
-    transition: max-height 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: hidden;
+    max-height: 0; /* Initially hidden */
+    transition: max-height 0.3s ease; /* Smooth toggle effect */
 }
 
-/* Tracklist */
+/* Open dropdown (activated state) */
+.dropdown-container.open {
+    max-height: 200px; /* Adjust height based on tracklist size */
+    overflow-y: auto; /* Enables scrolling if content exceeds max height */
+}
+
+/* Tracklist styles */
 .tracklist {
     list-style: none;
     margin: 0;
@@ -90,24 +99,22 @@ input[type="range"] {
 }
 
 .tracklist li {
-    padding: 8px;
+    padding: 10px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
     text-align: center;
+    transition: background-color 0.2s ease;
 }
 
 .tracklist li:hover {
     background-color: #fdfd96;
 }
 
-/* Open dropdown (activated state) */
-.dropdown-container.open {
-    max-height: 200px; /* Adjust based on the number of tracks */
-}
+/* Dropdown items for fallback dropdown menu */
 .dropdown {
     position: absolute;
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
     max-height: 200px;
     overflow-y: auto;
@@ -116,29 +123,6 @@ input[type="range"] {
     display: none; /* Initially hidden */
     z-index: 100;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown li {
-    list-style: none;
-    padding: 8px;
-    cursor: pointer;
-    border-bottom: 1px solid #eee;
-}
-
-.dropdown li:hover {
-    background-color: #fdfd96;
-}
-
-.hidden {
-    display: none;
-}
-
-.dropdown {
-    max-height: 300px; /* Adjust to fit all tracks or allow scrolling */
-    overflow-y: auto; /* Enables a scrollbar if the content exceeds the height */
-    background-color: #fff; /* Ensure the background matches your design */
-    border: 1px solid #ddd; /* Optional: adds a border for clarity */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: adds a dropdown shadow */
 }
 
 .dropdown-item {
@@ -150,4 +134,10 @@ input[type="range"] {
 .dropdown-item:hover {
     background-color: #f0f0f0;
 }
+
+/* Ensure visibility when toggled */
+.hidden {
+    display: none;
+}
+
 
