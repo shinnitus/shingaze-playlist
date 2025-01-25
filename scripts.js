@@ -13,7 +13,6 @@ const playlist = [
     { src: "assets/ダブル・プラトニツク・スウイサイド.mp3", title: "ダブル・プラトニツク・スウイサイド", artist: "tokenainamae" }
 ];
 
-
 let currentTrackIndex = 0;
 const audio = new Audio();
 const currentTrackTitle = document.getElementById("currentTrackTitle");
@@ -22,7 +21,11 @@ const playPauseButton = document.getElementById("playPauseButton");
 const volumeSlider = document.getElementById("volumeSlider");
 const prevButton = document.getElementById("prevButton");
 const nextButton = document.getElementById("nextButton");
+const dropdownContainer = document.getElementById("dropdownContainer");
+const tracklistElement = document.getElementById("tracklist");
+const menuButton = document.getElementById("menuButton");
 
+// Load the current track's info
 function loadTrack(index) {
     const track = playlist[index];
     audio.src = track.src;
@@ -31,6 +34,7 @@ function loadTrack(index) {
     audio.load();
 }
 
+// Play/Pause button toggle
 function togglePlayPause() {
     if (audio.paused) {
         audio.play();
@@ -41,6 +45,7 @@ function togglePlayPause() {
     }
 }
 
+// Play next track
 function playNext() {
     currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
     loadTrack(currentTrackIndex);
@@ -48,6 +53,7 @@ function playNext() {
     playPauseButton.textContent = "⏸"; // Update button to pause
 }
 
+// Play previous track
 function playPrevious() {
     currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
     loadTrack(currentTrackIndex);
@@ -55,69 +61,37 @@ function playPrevious() {
     playPauseButton.textContent = "⏸"; // Update button to pause
 }
 
-// Event listener for when the audio ends
-audio.addEventListener("ended", playNext);
-
-// Volume slider listener
-volumeSlider.addEventListener("input", () => {
-    audio.volume = volumeSlider.value;
-});
-
-// Attach event listeners
-prevButton.addEventListener("click", playPrevious);
-nextButton.addEventListener("click", playNext);
-playPauseButton.addEventListener("click", togglePlayPause);
-
-// Load the first track initially
-loadTrack(currentTrackIndex);
-const dropdownContainer = document.getElementById("dropdownContainer");
-const tracklistElement = document.getElementById("tracklist");
-const menuButton = document.getElementById("menuButton");
-
-// Load playlist into dropdown
-playlist.forEach((track, index) => {
-    const li = document.createElement("li");
-    li.textContent = track.title;
-    li.dataset.index = index;
-    li.addEventListener("click", () => {
-        currentTrackIndex = index;
-        loadTrack(currentTrackIndex);
-        audio.play();
-    });
-    tracklistElement.appendChild(li);
-});
-
-// Toggle dropdown
+// Toggle dropdown visibility
 menuButton.addEventListener("click", () => {
     dropdownContainer.classList.toggle("open");
 });
-const dropdown = document.getElementById("tracklist");
 
-// Populate the dropdown menu with tracks
-playlist.forEach((track, index) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = track.title;
-    listItem.classList.add("track-item");
-    listItem.addEventListener("click", () => {
-        loadTrack(index); // Load the selected track when clicked
-        audio.play(); // Start playing immediately
-        toggleDropdown(false); // Close the dropdown menu
+// Create track list for the dropdown menu
+function createTrackList() {
+    playlist.forEach((track, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${track.title} - ${track.artist}`;
+        li.addEventListener("click", () => {
+            currentTrackIndex = index;
+            loadTrack(currentTrackIndex);
+            audio.play();
+            playPauseButton.textContent = "⏸";
+            dropdownContainer.classList.remove("open"); // Close the dropdown after selection
+        });
+        tracklistElement.appendChild(li);
     });
-    dropdown.appendChild(listItem);
-});
-const dropdown = document.getElementById("tracklist");
+}
 
-playlist.forEach((track, index) => {
-    playlist.forEach((track) => {
-    console.log(track.title); // This should log all 12 tracks
-});
-    const trackItem = document.createElement("li");
-    trackItem.textContent = `${track.title} - ${track.artist}`;
-    trackItem.classList.add("dropdown-item");
-    trackItem.addEventListener("click", () => {
-        loadTrack(index); // Plays the selected track
-        toggleDropdown(); // Closes the dropdown menu
-    });
-    dropdown.appendChild(trackItem);
+// Volume control
+volumeSlider.addEventListener("input", (e) => {
+    audio.volume = e.target.value;
 });
 
+// Event listeners for play, next, and prev buttons
+playPauseButton.addEventListener("click", togglePlayPause);
+nextButton.addEventListener("click", playNext);
+prevButton.addEventListener("click", playPrevious);
+
+// Initialize the first track and load track list
+loadTrack(currentTrackIndex);
+createTrackList();
