@@ -74,7 +74,7 @@ input[type="range"] {
     position: relative;
     width: 100%;
     max-width: 300px;
-    background-color: #82dbff; /* Matches the player background */
+    background-color: #fff; /* Matches the player background */
     border-radius: 10px;
     margin-top: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
