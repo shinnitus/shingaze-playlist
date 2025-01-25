@@ -74,7 +74,7 @@ input[type="range"] {
     position: relative;
     width: 100%;
     max-width: 300px;
-    background-color: #fff; /* Matches the player background */
+    background-color: #fcdd79; /* Matches the player background */
     border-radius: 10px;
     margin-top: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -107,7 +107,7 @@ input[type="range"] {
 }
 
 .tracklist li:hover {
-    background-color: #fdfd96;
+    background-color: #fff;
 }
 
 /* Dropdown items for fallback dropdown menu */
