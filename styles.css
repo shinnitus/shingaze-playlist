@@ -26,7 +26,7 @@ body {
 .player-container {
     background-color: #82dbff; /* Pastel blue */
     border-radius: 15px;
-    padding: 20px;
+    padding: 10px;
     width: 300px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
